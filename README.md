@@ -1,12 +1,13 @@
 # Joy's Vocabulary
 
-A small static vocabulary practice site. The child page and parent reference page are linked from `index.html`.
+Live site: https://feverpitch15.github.io/Joys-Vocas/
 
-## Publish with GitHub Pages
+The home page links to the child practice page and parent reference page. GitHub Pages publishes from the `main` branch root, so the public site is updated at the same URL whenever changes are pushed to `main`.
 
-1. Create a GitHub repository for this folder and push its contents to the `main` branch.
-2. In the repository, open **Settings > Pages**.
-3. Choose **Deploy from a branch**, select `main` and `/(root)`, then save.
-4. GitHub Pages will provide a site URL. Keep using that same URL; after weekly file changes are pushed to `main`, Pages updates the site.
+## Weekly update
 
-The source worksheet photos `nonfiction/IMG_3469.JPG` and `nonfiction/IMG_3470.JPG` are excluded by `.gitignore`. Do not force-add them. GitHub Pages content is publicly viewable, so review the files and visibility before publishing. The generated vocabulary illustration and both card pages will be part of the site.
+1. Update the parent and child card pages with the new vocabulary.
+2. Replace the generated image sheet at `nonfiction/images/Gemini_Generated_Image_ubono3ubono3ubon.png`.
+3. Push the changes to `main`; GitHub Pages redeploys to the same URL.
+
+Worksheet photos named `IMG_*.JPG` or `IMG_*.jpg` directly inside `nonfiction` are excluded by `.gitignore`. Do not force-add them. The site and repository are public; only publish the vocabulary pages and generated illustrations, not source worksheet photos or personal information.
