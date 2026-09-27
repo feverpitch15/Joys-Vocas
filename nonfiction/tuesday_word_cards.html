@@ -1,0 +1,291 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Nonfiction Vocabulary Cards | Unit 3-11</title>
+  <style>
+    :root {
+      color-scheme: light;
+      --ink: #183436;
+      --muted: #52696a;
+      --paper: #f4f7f3;
+      --line: #cfdbd4;
+      --teal: #087e78;
+      --coral: #dc684e;
+      --yellow: #e2ae36;
+      --green: #6b8b45;
+      --blue: #557e9b;
+    }
+
+    * { box-sizing: border-box; }
+
+    body {
+      margin: 0;
+      background: var(--paper);
+      color: var(--ink);
+      font-family: "Trebuchet MS", "Segoe UI", sans-serif;
+      line-height: 1.4;
+    }
+
+    main {
+      max-width: 1100px;
+      margin: 0 auto;
+      padding: 28px 22px 40px;
+    }
+
+    header {
+      display: flex;
+      align-items: end;
+      justify-content: space-between;
+      gap: 20px;
+      border-bottom: 2px solid var(--ink);
+      padding-bottom: 16px;
+      margin-bottom: 20px;
+    }
+
+    h1 {
+      margin: 0;
+      font-family: Georgia, "Times New Roman", serif;
+      font-size: 30px;
+      font-weight: 700;
+    }
+
+    .unit, .tip { color: var(--muted); }
+    .unit { margin: 5px 0 0; font-size: 14px; }
+    .tip { max-width: 310px; margin: 0; text-align: right; font-size: 13px; }
+
+    .deck {
+      display: grid;
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+      gap: 14px;
+    }
+
+    .card {
+      overflow: hidden;
+      border: 1px solid var(--line);
+      border-top: 5px solid var(--accent, var(--teal));
+      border-radius: 8px;
+      background: #fff;
+      box-shadow: 0 2px 7px #18343612;
+    }
+
+    .card:nth-child(5n + 1) { --accent: var(--teal); }
+    .card:nth-child(5n + 2) { --accent: var(--coral); }
+    .card:nth-child(5n + 3) { --accent: var(--yellow); }
+    .card:nth-child(5n + 4) { --accent: var(--green); }
+    .card:nth-child(5n + 5) { --accent: var(--blue); }
+
+    summary {
+      display: flex;
+      min-height: 0;
+      align-items: center;
+      gap: 15px;
+      padding: 12px 16px 4px;
+      cursor: default;
+      pointer-events: none;
+      list-style: none;
+    }
+
+    summary::-webkit-details-marker { display: none; }
+
+    .picture {
+      display: block;
+      width: 96px;
+      height: 131px;
+      flex: 0 0 96px;
+      border: 1px solid var(--line);
+      border-radius: 8px;
+      background-image: url("images/Gemini_Generated_Image_ubono3ubono3ubon.png");
+      background-repeat: no-repeat;
+      background-size: 500% 200%;
+    }
+
+    .picture svg { display: none; }
+    .card:nth-child(1) .picture { background-position: 0% 0%; }
+    .card:nth-child(2) .picture { background-position: 25% 0%; }
+    .card:nth-child(3) .picture { background-position: 50% 0%; }
+    .card:nth-child(4) .picture { background-position: 75% 0%; }
+    .card:nth-child(5) .picture { background-position: 100% 0%; }
+    .card:nth-child(6) .picture { background-position: 0% 100%; }
+    .card:nth-child(7) .picture { background-position: 25% 100%; }
+    .card:nth-child(8) .picture { background-position: 50% 100%; }
+    .card:nth-child(9) .picture { background-position: 75% 100%; }
+    .card:nth-child(10) .picture { background-position: 100% 100%; }
+
+    .word-line { display: flex; align-items: baseline; gap: 8px; flex-wrap: wrap; }
+    h2 { margin: 0; font-family: Georgia, "Times New Roman", serif; font-size: 25px; }
+    .part {
+      border-radius: 4px;
+      padding: 3px 7px;
+      background: color-mix(in srgb, var(--accent) 13%, white);
+      color: var(--ink);
+      font-size: 12px;
+      font-weight: 700;
+    }
+    .front-prompt, .open-label { display: none; }
+
+    .back {
+      display: grid;
+      gap: 9px;
+      border-top: 1px solid var(--line);
+      padding: 13px 16px 15px;
+    }
+
+    .card:not([open]) > .back { display: grid !important; }
+
+    .field { margin: 0; }
+    .field h3 { margin: 0 0 2px; color: var(--accent); font-size: 11px; text-transform: uppercase; }
+    .field p { margin: 0; font-size: 14px; }
+    .parent {
+      border-left: 3px solid var(--accent);
+      padding: 5px 9px;
+      background: #f4f7f3;
+      color: #3c5554;
+      font-size: 12px;
+    }
+    .parent strong { color: var(--ink); }
+
+    @media (max-width: 650px) {
+      main { padding: 20px 14px 28px; }
+      header { align-items: start; flex-direction: column; gap: 8px; }
+      h1 { font-size: 26px; }
+      .tip { max-width: none; text-align: left; }
+      .deck { grid-template-columns: 1fr; }
+    }
+
+    @media print {
+      @page { size: A4 portrait; margin: 12mm; }
+      body { background: #fff; print-color-adjust: exact; -webkit-print-color-adjust: exact; }
+      main { max-width: none; padding: 0; }
+      header { margin-bottom: 10px; padding-bottom: 9px; }
+      h1 { font-size: 22px; }
+      .tip { font-size: 10px; }
+      .deck { grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 8px; }
+      .card { break-inside: avoid; box-shadow: none; }
+      summary { min-height: 76px; padding: 8px; cursor: default; gap: 9px; }
+      .picture { width: 55px; height: 75px; flex-basis: 55px; }
+      h2 { font-size: 19px; }
+      .front-prompt, .open-label { display: none; }
+      details:not([open]) > .back { display: grid !important; }
+      .back { gap: 5px; padding: 8px; }
+      .field h3 { font-size: 9px; }
+      .field p { font-size: 10px; line-height: 1.25; }
+      .parent { padding: 4px 6px; font-size: 9px; line-height: 1.25; }
+    }
+  </style>
+</head>
+<body>
+  <main>
+    <header>
+      <div>
+        <h1>Nonfiction Vocabulary</h1>
+        <p class="unit">Unit 3-11 · Explain each word in your own English.</p>
+      </div>
+        <p class="tip" lang="ko">품사와 교과서 뜻을 확인하고, 쉬운 영어로 뜻을 설명해 보세요.</p>
+    </header>
+
+    <section class="deck" aria-label="Ten vocabulary cards">
+      <details class="card" open>
+        <summary><span class="picture"><svg viewBox="0 0 100 100" aria-hidden="true" focusable="false"><path d="M12 84h77" stroke="#6b8b45" stroke-width="4" stroke-linecap="round"/><ellipse cx="39" cy="68" rx="27" ry="17" fill="#8da8a4"/><circle cx="58" cy="48" r="27" fill="#9db5b0"/><ellipse cx="39" cy="48" rx="17" ry="21" fill="#718f8d"/><circle cx="39" cy="31" r="11" fill="#718f8d"/><circle cx="67" cy="43" r="2.7" fill="#183436"/><path d="M75 57c11 2 11 11 4 14-5 2-9-3-10-10" fill="#f7e2a4" stroke="#c59d4c" stroke-width="2"/><path d="M53 66c-6 9-4 19 4 20 7 1 12-5 8-11" fill="none" stroke="#718f8d" stroke-width="8" stroke-linecap="round"/></svg></span><span><span class="word-line"><h2>tusk</h2><span class="part">noun</span></span><span class="front-prompt">What is a tusk?</span></span><span class="open-label">Think first</span></summary>
+        <div class="back">
+          <div class="field"><h3>Book meaning</h3><p>A large tooth that sticks out of an animal's mouth.</p></div>
+          <div class="field"><h3>In your own words</h3><p>A tusk is a long tooth outside an animal's mouth.</p></div>
+          <div class="field"><h3>Example</h3><p>The elephant used its tusk to dig in the dirt.</p></div>
+          <div class="parent" lang="ko"><strong>부모 힌트:</strong> 코끼리 이빨 그림을 가리키며 “일반 이빨과 어디가 다를까?” 하고 물어보세요.</div>
+        </div>
+      </details>
+
+      <details class="card" open>
+        <summary><span class="picture"><svg viewBox="0 0 100 100" aria-hidden="true" focusable="false"><circle cx="76" cy="22" r="11" fill="#e2ae36"/><path d="M18 39c-8 0-12-6-9-12 2-5 8-7 13-5 3-10 19-11 23-1 9-2 15 4 13 11-1 5-5 7-10 7z" fill="#7798a2"/><path d="m22 45-4 9m19-9-4 9m19-9-4 9" stroke="#557e9b" stroke-width="4" stroke-linecap="round"/><path d="M15 72h68l-6 15H22z" fill="#dc684e"/><path d="M31 72v15m18-15v15m18-15v15" stroke="#f7e2a4" stroke-width="4"/><path d="M66 61h18v11H66z" fill="#c47a42"/><path d="M65 61c4-8 15-8 19 0" fill="#e2ae36"/></svg></span><span><span class="word-line"><h2>unfortunate</h2><span class="part">adjective</span></span><span class="front-prompt">Was it lucky or unlucky?</span></span><span class="open-label">Think first</span></summary>
+        <div class="back">
+          <div class="field"><h3>Book meaning</h3><p>Unlucky or sad.</p></div>
+          <div class="field"><h3>In your own words</h3><p>It means something sad or bad happened.</p></div>
+          <div class="field"><h3>Example</h3><p>It was unfortunate that rain canceled our picnic.</p></div>
+          <div class="parent" lang="ko"><strong>부모 힌트:</strong> 비 때문에 소풍을 못 간 장면을 떠올리고 “운이 좋았을까, 안 좋았을까?”라고 물어보세요.</div>
+        </div>
+      </details>
+
+      <details class="card" open>
+        <summary><span class="picture"><svg viewBox="0 0 100 100" aria-hidden="true" focusable="false"><path d="M9 76c19-7 31-12 47-24" fill="none" stroke="#765c3d" stroke-width="5" stroke-linecap="round"/><ellipse cx="19" cy="59" rx="10" ry="5" transform="rotate(-35 19 59)" fill="#6b8b45"/><ellipse cx="36" cy="52" rx="10" ry="5" transform="rotate(25 36 52)" fill="#86a55d"/><circle cx="39" cy="33" r="17" fill="#9aa6a3"/><circle cx="25" cy="31" r="9" fill="#859390"/><circle cx="53" cy="31" r="9" fill="#859390"/><circle cx="25" cy="31" r="4" fill="#efb8a7"/><circle cx="53" cy="31" r="4" fill="#efb8a7"/><circle cx="33" cy="32" r="2" fill="#183436"/><circle cx="45" cy="32" r="2" fill="#183436"/><ellipse cx="39" cy="39" rx="5" ry="7" fill="#334e51"/><path d="M67 66l9-14 10 6-4 8 9 4-7 13-18-5z" fill="#6b8b45"/><path d="m80 54 7 4-4 7" fill="#f4f7f3"/><circle cx="81" cy="68" r="3" fill="#dc684e"/></svg></span><span><span class="word-line"><h2>native</h2><span class="part">adjective</span></span><span class="front-prompt">Where is it originally from?</span></span><span class="open-label">Think first</span></summary>
+        <div class="back">
+          <div class="field"><h3>Book meaning</h3><p>Originally from a place.</p></div>
+          <div class="field"><h3>In your own words</h3><p>A native animal first lived in that place.</p></div>
+          <div class="field"><h3>Example</h3><p>Koalas are native to Australia.</p></div>
+          <div class="parent" lang="ko"><strong>부모 힌트:</strong> “이 동물이 원래 어디에서 살았을까?”라고 물어보세요. 사람이나 식물에도 쓸 수 있어요.</div>
+        </div>
+      </details>
+
+      <details class="card" open>
+        <summary><span class="picture"><svg viewBox="0 0 100 100" aria-hidden="true" focusable="false"><path d="M12 80h76" stroke="#765c3d" stroke-width="4" stroke-linecap="round"/><path d="M24 77V29m26 48V29m26 48V29M18 32h64" stroke="#557e9b" stroke-width="3" stroke-linecap="round"/><path d="M20 43h11l5 8-5 18H20z" fill="#e2ae36"/><path d="M45 43h11l5 8-5 18H45z" fill="#dc684e"/><path d="M70 43h11l5 8-5 18H70z" fill="#6b8b45"/><path d="M75 14c-7 0-12 5-12 11v8l-5 8c-2 3 1 6 4 4l7-5 3 4c2 3 6 1 5-2l-1-4 7-8c3-3 2-8-2-9-1-4-3-7-6-7z" fill="#e8b28c" stroke="#a96c55" stroke-width="2" stroke-linejoin="round"/><path d="M70 37v-9" stroke="#a96c55" stroke-width="3" stroke-linecap="round"/></svg></span><span><span class="word-line"><h2>pick</h2><span class="part">verb</span></span><span class="front-prompt">What do you do when you pick?</span></span><span class="open-label">Think first</span></summary>
+        <div class="back">
+          <div class="field"><h3>Book meaning</h3><p>To select, choose, or say you want something from a place.</p></div>
+          <div class="field"><h3>In your own words</h3><p>To pick means to choose the one you want.</p></div>
+          <div class="field"><h3>Example</h3><p>I picked a blue shirt from the closet.</p></div>
+          <div class="parent" lang="ko"><strong>부모 힌트:</strong> 옷장에서 하나를 고르는 그림을 가리키며 “Which one did you pick?”이라고 물어보세요.</div>
+        </div>
+      </details>
+
+      <details class="card" open>
+        <summary><span class="picture"><svg viewBox="0 0 100 100" aria-hidden="true" focusable="false"><path d="M8 51h84" stroke="#765c3d" stroke-width="5"/><path d="M10 54v34h80V54" fill="#c99b69"/><path d="M49 50V24m0 14c-8-13-19-13-24-7 4 10 14 13 24 7zm2-5c6-13 17-14 22-8-4 10-13 14-22 8z" fill="#6b8b45" stroke="#4f713a" stroke-width="2" stroke-linejoin="round"/><path d="M50 52c-2 9-13 10-13 21m13-18c8 7 15 8 14 19m-15-12c-1 11-5 15-5 21m7-22c1 9 8 12 8 21m-10-9c-5 1-8 4-10 8m13-8c6 0 9 3 12 7" fill="none" stroke="#f2dfb2" stroke-width="3" stroke-linecap="round"/></svg></span><span><span class="word-line"><h2>root</h2><span class="part">noun</span></span><span class="front-prompt">Which part grows underground?</span></span><span class="open-label">Think first</span></summary>
+        <div class="back">
+          <div class="field"><h3>Book meaning</h3><p>The part of a plant that grows underground.</p></div>
+          <div class="field"><h3>In your own words</h3><p>A root is the part of a plant under the ground.</p></div>
+          <div class="field"><h3>Example</h3><p>The plant's roots spread deep under the soil.</p></div>
+          <div class="parent" lang="ko"><strong>부모 힌트:</strong> 식물의 뿌리가 흙 아래에 있고 물을 빨아들인다는 점을 그림이나 화분으로 보여 주세요.</div>
+        </div>
+      </details>
+
+      <details class="card" open>
+        <summary><span class="picture"><svg viewBox="0 0 100 100" aria-hidden="true" focusable="false"><path d="M22 80c0-18 8-54 28-54s28 36 28 54c0 11-10 15-28 15S22 91 22 80z" fill="#fff8dc" stroke="#d3b86b" stroke-width="3"/><path d="m42 37 7 8-6 8 9 7-7 8 8 8" fill="none" stroke="#dc684e" stroke-width="4" stroke-linejoin="round" stroke-linecap="round"/><path d="M13 82h74" stroke="#557e9b" stroke-width="4" stroke-linecap="round"/><circle cx="77" cy="27" r="8" fill="#e2ae36"/><path d="M73 27h8m-4-4v8" stroke="#fff" stroke-width="2" stroke-linecap="round"/></svg></span><span><span class="word-line"><h2>crack</h2><span class="part">verb</span></span><span class="front-prompt">What happens when something cracks?</span></span><span class="open-label">Think first</span></summary>
+        <div class="back">
+          <div class="field"><h3>Book meaning</h3><p>To make a small break in something.</p></div>
+          <div class="field"><h3>In your own words</h3><p>To crack means to make a small break.</p></div>
+          <div class="field"><h3>Example</h3><p>I cracked the egg into a bowl.</p></div>
+          <div class="parent" lang="ko"><strong>부모 힌트:</strong> 달걀 껍데기에 금을 내는 동작을 보여 주세요. “완전히 산산조각 난 걸까, 작은 틈이 생긴 걸까?”</div>
+        </div>
+      </details>
+
+      <details class="card" open>
+        <summary><span class="picture"><svg viewBox="0 0 100 100" aria-hidden="true" focusable="false"><path d="m46 53 41 13-27 18z" fill="#e2ae36" stroke="#c47a42" stroke-width="2"/><path d="m46 53 9-5 5 6-8 5m25 8 7-4" fill="none" stroke="#6b8b45" stroke-width="4" stroke-linecap="round"/><path d="M14 55c0-17 14-27 31-25 16 2 23 14 20 29-2 12-13 19-29 17-13-2-22-9-22-21z" fill="#f0eee4" stroke="#9aa6a3" stroke-width="3"/><circle cx="22" cy="36" r="10" fill="#f0eee4" stroke="#9aa6a3" stroke-width="3"/><circle cx="22" cy="36" r="4" fill="#dc684e"/><circle cx="43" cy="46" r="2.5" fill="#183436"/><ellipse cx="59" cy="58" rx="4" ry="3" fill="#dc684e"/><path d="M62 61 71 64" stroke="#183436" stroke-width="2" stroke-linecap="round"/><path d="M24 75c-6 9-4 13 2 13 5 0 7-5 4-9" fill="none" stroke="#9aa6a3" stroke-width="3" stroke-linecap="round"/></svg></span><span><span class="word-line"><h2>nibble</h2><span class="part">verb</span></span><span class="front-prompt">Big bites or tiny bites?</span></span><span class="open-label">Think first</span></summary>
+        <div class="back">
+          <div class="field"><h3>Book meaning</h3><p>To take small bites from something.</p></div>
+          <div class="field"><h3>In your own words</h3><p>To nibble means to eat with tiny bites.</p></div>
+          <div class="field"><h3>Example</h3><p>The rabbit nibbled a carrot.</p></div>
+          <div class="parent" lang="ko"><strong>부모 힌트:</strong> 한입에 크게 베어 먹는 것과 조금씩 베어 먹는 것을 비교해 보세요.</div>
+        </div>
+      </details>
+
+      <details class="card" open>
+        <summary><span class="picture"><svg viewBox="0 0 100 100" aria-hidden="true" focusable="false"><path d="m22 35 27-12 28 12v43L49 91 22 78z" fill="#f7e2a4" stroke="#765c3d" stroke-width="3" stroke-linejoin="round"/><path d="m49 24 1 66m-25-51 23 10 25-10" fill="none" stroke="#c47a42" stroke-width="2"/><path d="M15 19h31" stroke="#334e51" stroke-width="8" stroke-linecap="round"/><path d="m38 13 9 6-9 6" fill="#334e51"/><path d="M69 22a20 20 0 1 0 0 40 20 20 0 0 0 0-40z" fill="#fff" stroke="#dc684e" stroke-width="5"/><path d="m55 56 28-28" stroke="#dc684e" stroke-width="6" stroke-linecap="round"/><path d="M66 44h6m-3-3v6" stroke="#183436" stroke-width="2" stroke-linecap="round"/></svg></span><span><span class="word-line"><h2>illegal</h2><span class="part">adjective</span></span><span class="front-prompt">Is it against the law?</span></span><span class="open-label">Think first</span></summary>
+        <div class="back">
+          <div class="field"><h3>Book meaning</h3><p>Against the law.</p></div>
+          <div class="field"><h3>In your own words</h3><p>Illegal means the law says you must not do it.</p></div>
+          <div class="field"><h3>Example</h3><p>It is illegal to take things from a store without paying.</p></div>
+          <div class="parent" lang="ko"><strong>부모 힌트:</strong> 규칙과 법의 차이를 간단히 설명해 주세요. “법으로 허용되지 않는 일”이라는 핵심을 잡으면 돼요.</div>
+        </div>
+      </details>
+
+      <details class="card" open>
+        <summary><span class="picture"><svg viewBox="0 0 100 100" aria-hidden="true" focusable="false"><path d="M8 76c9-8 17 8 26 0s17 8 26 0 17 8 26 0" fill="none" stroke="#557e9b" stroke-width="5" stroke-linecap="round"/><path d="M8 88c9-8 17 8 26 0s17 8 26 0 17 8 26 0" fill="none" stroke="#8bb3be" stroke-width="4" stroke-linecap="round"/><circle cx="71" cy="57" r="10" fill="#e8b28c"/><path d="M59 65c9-5 19-4 26 2l-3 9-25-1z" fill="#557e9b"/><path d="M61 66 48 58" stroke="#e8b28c" stroke-width="6" stroke-linecap="round"/><circle cx="34" cy="48" r="10" fill="#e8b28c"/><path d="M25 46c2-11 18-13 22-2h-9l-3 6z" fill="#334e51"/><path d="M32 59c8-5 16-2 20 5l-7 13H25z" fill="#dc684e"/><path d="M49 64 60 66" stroke="#e8b28c" stroke-width="5" stroke-linecap="round"/><circle cx="72" cy="57" r="17" fill="none" stroke="#dc684e" stroke-width="5" stroke-dasharray="13 8"/></svg></span><span><span class="word-line"><h2>rescue</h2><span class="part">verb</span></span><span class="front-prompt">Who helps someone out of danger?</span></span><span class="open-label">Think first</span></summary>
+        <div class="back">
+          <div class="field"><h3>Book meaning</h3><p>To save someone from something.</p></div>
+          <div class="field"><h3>In your own words</h3><p>To rescue means to save someone who is in danger.</p></div>
+          <div class="field"><h3>Example</h3><p>The lifeguard rescued the swimmer from the water.</p></div>
+          <div class="parent" lang="ko"><strong>부모 힌트:</strong> 위험한 상황에 빠진 사람을 안전하게 도와주는 장면을 떠올리게 해 주세요.</div>
+        </div>
+      </details>
+
+      <details class="card" open>
+        <summary><span class="picture"><svg viewBox="0 0 100 100" aria-hidden="true" focusable="false"><circle cx="31" cy="37" r="13" fill="#e8b28c"/><path d="M17 34c1-14 26-17 29-1H17z" fill="#334e51"/><path d="M21 31h23" stroke="#e2ae36" stroke-width="4" stroke-linecap="round"/><path d="M20 53c6-6 17-6 23 0l7 32H13z" fill="#557e9b"/><path d="M68 42c10 0 17 8 17 18v25H55V60c0-10 5-18 13-18z" fill="#dcaa83"/><path d="M62 62h12m6 0h5" stroke="#183436" stroke-width="3" stroke-linecap="round"/><path d="M49 68c4-6 8-7 12-4m-12 6c4 4 8 4 12 1" fill="none" stroke="#e8b28c" stroke-width="5" stroke-linecap="round"/><circle cx="53" cy="68" r="5" fill="none" stroke="#e2ae36" stroke-width="3"/><circle cx="53" cy="68" r="2" fill="#fff"/><path d="M12 89h77" stroke="#6b8b45" stroke-width="3" stroke-linecap="round"/></svg></span><span><span class="word-line"><h2>under arrest</h2><span class="part">phrase</span></span><span class="front-prompt">What have the police done?</span></span><span class="open-label">Think first</span></summary>
+        <div class="back">
+          <div class="field"><h3>Book meaning</h3><p>When the police take a person to jail.</p></div>
+          <div class="field"><h3>In your own words</h3><p>It means the police caught the person and took them to jail.</p></div>
+          <div class="field"><h3>Example</h3><p>The news said the man was under arrest.</p></div>
+          <div class="parent" lang="ko"><strong>부모 힌트:</strong> 경찰이 법을 어겼다고 의심되는 사람을 공식적으로 붙잡은 상태라고 설명해 주세요. 유죄가 확정됐다는 뜻과는 달라요.</div>
+        </div>
+      </details>
+    </section>
+  </main>
+</body>
+</html>
