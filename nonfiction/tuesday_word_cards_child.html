@@ -409,7 +409,7 @@
       answer.classList.toggle("is-visible", isOpen);
       answer.setAttribute("aria-hidden", String(!isOpen));
       if (isOpen && window.matchMedia("(max-width: 620px)").matches) {
-        answer.scrollIntoView({ behavior: "smooth", block: "nearest" });
+        answer.scrollIntoView({ behavior: "smooth", block: "center" });
       }
     }
 
