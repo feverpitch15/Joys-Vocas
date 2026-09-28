@@ -209,7 +209,7 @@
     @media (max-width: 620px) {
       main { padding-top: 18px; }
       header { align-items: start; }
-      .word-panel { grid-template-columns: 1fr; gap: 20px; padding: 20px; }
+      .word-panel { grid-template-columns: 1fr; gap: 20px; min-height: 0; padding: 20px; }
       .scene { width: min(100%, 190px); }
       h2 { font-size: 42px; }
       .question { margin: 11px 0 16px; }
@@ -408,6 +408,9 @@
       button.setAttribute("aria-expanded", String(isOpen));
       answer.classList.toggle("is-visible", isOpen);
       answer.setAttribute("aria-hidden", String(!isOpen));
+      if (isOpen && window.matchMedia("(max-width: 620px)").matches) {
+        answer.scrollIntoView({ behavior: "smooth", block: "nearest" });
+      }
     }
 
     function resetHints() {
