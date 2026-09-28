@@ -207,7 +207,7 @@
     }
 
     @media (max-width: 620px) {
-      main { padding-top: 18px; }
+      main { padding-top: 18px; padding-bottom: 260px; }
       header { align-items: start; }
       .word-panel { grid-template-columns: 1fr; gap: 20px; min-height: 0; padding: 20px; }
       .scene { width: min(100%, 190px); }
@@ -409,7 +409,8 @@
       answer.classList.toggle("is-visible", isOpen);
       answer.setAttribute("aria-hidden", String(!isOpen));
       if (isOpen && window.matchMedia("(max-width: 620px)").matches) {
-        answer.scrollIntoView({ behavior: "smooth", block: "center" });
+        const targetTop = answer.getBoundingClientRect().top + window.scrollY - window.innerHeight * 0.45;
+        window.scrollTo({ top: Math.max(0, targetTop), behavior: "smooth" });
       }
     }
 
