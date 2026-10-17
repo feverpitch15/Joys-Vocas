@@ -228,7 +228,7 @@
   <main>
     <header>
       <div>
-        <p class="eyebrow">Nonfiction · Unit 3-11</p>
+        <p class="eyebrow">Nonfiction · Unit 4-2</p>
         <h1>Word Practice</h1>
       </div>
       <span class="counter" id="counter" aria-live="polite">01 / 10</span>
@@ -242,9 +242,9 @@
       <div class="scene" id="scene" role="img" aria-label="Vocabulary illustration"></div>
       <div class="word-copy">
         <div class="word-meta">
-          <h2 id="word">tusk</h2>
-          <span class="part" id="part">noun</span>
-          <button class="pronounce-button" id="pronounce-button" type="button" aria-label="Hear pronunciation for tusk" title="Hear pronunciation">
+          <h2 id="word">fantastic</h2>
+          <span class="part" id="part">adjective</span>
+          <button class="pronounce-button" id="pronounce-button" type="button" aria-label="Hear pronunciation for fantastic" title="Hear pronunciation">
             <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="M11 5 6 9H3v6h3l5 4z"/><path d="M15.5 8.5a5 5 0 0 1 0 7"/><path d="M19 5a10 10 0 0 1 0 14"/></svg>
           </button>
         </div>
@@ -275,84 +275,84 @@
   <script>
     const words = [
       {
-        word: "tusk",
+        word: "fantastic",
+        part: "adjective",
+        book: "Very good, great.",
+        simple: "Fantastic means really wonderful, great, and exciting!",
+        example: "The amazing performance at the concert last night was absolutely fantastic!",
+        image: "A fantastic concert performance with cheering audience"
+      },
+      {
+        word: "fairy",
         part: "noun",
-        book: "A large tooth that sticks out of an animal's mouth.",
-        simple: "A tusk is a long tooth outside an animal's mouth.",
-        example: "The elephant used its tusk to dig in the dirt.",
-        image: "An elephant with a long tusk"
+        book: "A small magical creature with wings.",
+        simple: "A fairy is a cute little magical person with wings.",
+        example: "The children were delighted to discover a magical fairy hiding among the flowers in the garden.",
+        image: "A magical winged fairy on a flower"
       },
       {
-        word: "unfortunate",
-        part: "adjective",
-        book: "Unlucky or sad.",
-        simple: "It means something sad or bad happened.",
-        example: "It was unfortunate that rain canceled our picnic.",
-        image: "A rainy picnic"
-      },
-      {
-        word: "native",
-        part: "adjective",
-        book: "Originally from a place.",
-        simple: "A native animal first lived in that place.",
-        example: "Koalas are native to Australia.",
-        image: "A koala in its native place"
-      },
-      {
-        word: "pick",
-        part: "verb",
-        book: "To select, choose, or say you want something from a place.",
-        simple: "To pick means to choose the one you want.",
-        example: "I picked a blue shirt from the closet.",
-        image: "A child picking one shirt"
-      },
-      {
-        word: "root",
+        word: "tale",
         part: "noun",
-        book: "The part of a plant that grows underground.",
-        simple: "A root is the part of a plant under the ground.",
-        example: "The plant's roots spread deep under the soil.",
-        image: "A plant with roots underground"
+        book: "An old story.",
+        simple: "A tale is an exciting old story or fairy tale.",
+        example: "The boy's mother read him a bedtime tale to help him sleep.",
+        image: "Reading a bedtime storybook tale"
       },
       {
-        word: "crack",
-        part: "verb",
-        book: "To make a small break in something.",
-        simple: "To crack means to make a small break.",
-        example: "I cracked the egg into a bowl.",
-        image: "An egg with a small crack"
-      },
-      {
-        word: "nibble",
-        part: "verb",
-        book: "To take small bites from something.",
-        simple: "To nibble means to eat with tiny bites.",
-        example: "The rabbit nibbled a carrot.",
-        image: "A rabbit nibbling a carrot"
-      },
-      {
-        word: "illegal",
+        word: "tiny",
         part: "adjective",
-        book: "Against the law.",
-        simple: "Illegal means the law says you must not do it.",
-        example: "It is illegal to take things from a store without paying.",
-        image: "A law book with a prohibition sign"
+        book: "Very small.",
+        simple: "Tiny means something that is very, very small and little.",
+        example: "Look at that tiny mouse! It's so small and cute!",
+        image: "A tiny cute mouse sitting on a clover"
       },
       {
-        word: "rescue",
+        word: "actually",
+        part: "adverb",
+        book: "Truthfully, in a real way.",
+        simple: "Actually means really, truthfully, or in real life.",
+        example: "Actually, I did see him at the party last night, even if he said he didn't see me.",
+        image: "Discovering the truth with an honest smile"
+      },
+      {
+        word: "peculiar",
+        part: "adjective",
+        book: "Strange, unusual.",
+        simple: "Peculiar means unusual, strange, or quirky in a special way.",
+        example: "The old house had a peculiar charm, with its crooked windows and overgrown garden.",
+        image: "A peculiar whimsical old cottage"
+      },
+      {
+        word: "feathery",
+        part: "adjective",
+        book: "Light and soft, like a feather.",
+        simple: "Feathery means soft, light, and fluffy just like feathers.",
+        example: "The bird's delicate, feathery wings shone like gems in the sunlight.",
+        image: "Soft and light feathery wings of a bird"
+      },
+      {
+        word: "drag",
         part: "verb",
-        book: "To save someone from something.",
-        simple: "To rescue means to save someone who is in danger.",
-        example: "The lifeguard rescued the swimmer from the water.",
-        image: "A lifeguard rescuing a swimmer"
+        book: "To pull or be pulled along the ground.",
+        simple: "To drag means to pull something heavy along the floor.",
+        example: "They had to drag the heavy suitcases up the stairs because the elevator was broken.",
+        image: "Dragging a heavy suitcase across the floor"
       },
       {
-        word: "under arrest",
-        part: "phrase",
-        book: "When the police take a person to jail.",
-        simple: "It means the police caught the person and took them to jail.",
-        example: "The news said the man was under arrest.",
-        image: "A police officer making an arrest"
+        word: "lucky",
+        part: "adjective",
+        book: "Having good things happen.",
+        simple: "Lucky means having good luck or fortunate things happen.",
+        example: "Jenny was lucky to find her missing ring in the cafe several days later.",
+        image: "A happy child holding a lucky four-leaf clover"
+      },
+      {
+        word: "sail",
+        part: "verb",
+        book: "To travel in a boat.",
+        simple: "To sail means to travel across the water on a sailboat.",
+        example: "They got onto the boat, ready to sail away to distant islands.",
+        image: "A sailboat sailing across blue waters"
       }
     ];
 
