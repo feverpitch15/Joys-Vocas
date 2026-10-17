@@ -161,43 +161,68 @@
     .meaning .answer-text { color: var(--ink); font-weight: 600; }
 
     .hint-sections {
-      display: grid;
-      grid-template-columns: 1fr;
-      gap: 4px;
-      margin-top: 10px;
+      display: flex;
+      flex-direction: column;
+      gap: 10px;
+      margin-top: 14px;
     }
 
     .hint-section {
       display: flex;
-      height: 108px;
       flex-direction: column;
-      gap: 4px;
+      gap: 6px;
     }
 
     .hint-button {
-      min-height: 46px;
-      border-color: var(--line);
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      min-height: 48px;
+      border: 1px solid var(--line);
+      border-radius: 6px;
+      padding: 10px 16px;
       background: #f8faf7;
-      color: #788786;
-      font-weight: 600;
+      color: var(--ink);
+      font-weight: 700;
       text-align: left;
+      touch-action: manipulation;
+      cursor: pointer;
+      -webkit-tap-highlight-color: transparent;
+      user-select: none;
+    }
+
+    .hint-button::after {
+      content: "▼";
+      font-size: 11px;
+      color: var(--teal);
+      transition: transform 0.2s ease;
     }
 
     .hint-button[aria-expanded="true"] {
-      border-color: #bfcfc8;
-      background: #f1f5f2;
+      border-color: var(--teal);
+      background: #eaf3f0;
+      color: var(--teal);
+    }
+
+    .hint-button[aria-expanded="true"]::after {
+      transform: rotate(180deg);
     }
 
     .hint-answer {
-      height: 58px;
-      flex: 0 0 58px;
+      display: none;
       margin: 0;
-      overflow: auto;
-      color: var(--muted);
-      visibility: hidden;
+      padding: 12px 16px;
+      border-radius: 6px;
+      background: #f4f8f6;
+      border-left: 4px solid var(--teal);
+      color: var(--ink);
+      font-size: 19px;
+      line-height: 1.45;
     }
 
-    .hint-answer.is-visible { visibility: visible; }
+    .hint-answer.is-visible {
+      display: block !important;
+    }
 
     nav {
       display: flex;
@@ -255,11 +280,11 @@
         </section>
         <div class="hint-sections" aria-label="Extra vocabulary hints">
           <section class="hint-section">
-            <button class="hint-button" id="simple-button" type="button" aria-expanded="false" aria-controls="simple-answer">In simple words</button>
+            <button class="hint-button" id="simple-button" type="button" aria-expanded="false" aria-controls="simple-answer"><span>In simple words</span></button>
             <p class="answer-text hint-answer" id="simple-answer" aria-hidden="true"></p>
           </section>
           <section class="hint-section">
-            <button class="hint-button" id="example-button" type="button" aria-expanded="false" aria-controls="example-answer">Example</button>
+            <button class="hint-button" id="example-button" type="button" aria-expanded="false" aria-controls="example-answer"><span>Example</span></button>
             <p class="answer-text hint-answer" id="example-answer" aria-hidden="true"></p>
           </section>
         </div>
@@ -406,9 +431,14 @@
     function toggleHint(button, answer) {
       const isOpen = button.getAttribute("aria-expanded") !== "true";
       button.setAttribute("aria-expanded", String(isOpen));
-      answer.classList.toggle("is-visible", isOpen);
-      answer.setAttribute("aria-hidden", String(!isOpen));
-      if (isOpen && window.matchMedia("(max-width: 620px)").matches) {
+      if (isOpen) {
+        answer.classList.add("is-visible");
+        answer.setAttribute("aria-hidden", "false");
+      } else {
+        answer.classList.remove("is-visible");
+        answer.setAttribute("aria-hidden", "true");
+      }
+      if (isOpen && window.matchMedia("(max-width: 960px)").matches) {
         const targetTop = answer.getBoundingClientRect().top + window.scrollY - window.innerHeight * 0.45;
         window.scrollTo({ top: Math.max(0, targetTop), behavior: "smooth" });
       }
