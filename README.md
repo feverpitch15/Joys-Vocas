@@ -23,10 +23,11 @@ The home page links to the child practice page and parent reference page. GitHub
 Worksheet photos named `IMG_*.JPG`, `IMG_*.jpg`, or `IMG_*.jpeg` directly inside `nonfiction` are excluded by `.gitignore`. Do not force-add them. The site and repository are public; only publish the vocabulary pages and generated illustrations, not source worksheet photos or personal information.
 
 
-## Archived Vocabulary Pool (50 Words Total)
+## Archived Vocabulary Pool (60 Words Total)
 - **Unit 3-11**: tusk, unfortunate, pick, native, root, crack, nibble, illegal, rescue, under arrest
 - **Unit 4-1**: superb, paradise, muscle, zany, fancy, scrub, tropical, gobble, invent, obey
 - **Unit 4-2**: fantastic, fairy, tale, tiny, actually, peculiar, feathery, drag, lucky, sail
 - **Unit 4-3**: cocoon, shell, huge, aboard, mostly, ability, tense, realize, enough, sparkly
 - **Nov Week 2 (Test Week 3)**: respond, shipwreck, confess, lately, circus, mystery, crash, regular, clatter, jerk
 - **Review Test (10 Words)**: paradise, scrub, gobble, invent, tiny, peculiar, lucky, sail, shell, ability
+- **Week 3 (Test Week 4)**: head for, simple, preen, company, slowpoke, navigate, useful, charming, ancient, the early days
