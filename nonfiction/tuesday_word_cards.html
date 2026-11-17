@@ -148,7 +148,7 @@
       flex: 0 0 96px;
       border: 1px solid var(--line);
       border-radius: 8px;
-      background-image: url("images/Gemini_Generated_Image_ubono3ubono3ubon.png");
+      background-image: url("images/Gemini_Generated_Image_ubono3ubono3ubon.png?v=20261117_v2");
       background-repeat: no-repeat;
       background-size: 500% 200%;
     }
@@ -346,6 +346,12 @@
       url.searchParams.set("v", Date.now());
       window.location.replace(url.toString());
     }
+
+    const urlParams = new URLSearchParams(window.location.search);
+    const cacheKey = urlParams.get("v") || "20261117_v2";
+    document.querySelectorAll(".picture").forEach(el => {
+      el.style.backgroundImage = `url("images/Gemini_Generated_Image_ubono3ubono3ubon.png?v=${cacheKey}")`;
+    });
   </script>
 </body>
 </html>
